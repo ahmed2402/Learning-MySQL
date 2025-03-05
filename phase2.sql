@@ -56,24 +56,29 @@ FROM student
 ORDER BY marks DESC 
 LIMIT 3;
 
+SELECT max(marks) 
+FROM student ;
 
+SELECT min(marks) 
+FROM student ;
 
+SELECT AVG(marks) 
+FROM student ;
 
+SELECT COUNT(rollno) 
+FROM student ;
 
+SELECT city , avg(marks)
+FROM student
+GROUP BY city;
 
+-- Write the QUERY to find avg marks in each city in ascending order
 
+SELECT city , avg(marks)
+FROM student
+GROUP BY city
+ORDER BY avg(marks) ASC ;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-LIMIT 3;
+SELECT grade,count(name)
+FROM student
+group by grade;
