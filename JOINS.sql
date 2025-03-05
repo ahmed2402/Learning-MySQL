@@ -80,5 +80,26 @@ right join course as c
 on s.student_id = c.student_id 
 where s.student_id is null ;
 
+-- SELF JOIN
 
+create table employee(
+	id int primary key,
+    name varchar(50),
+    manager_id int 
+);
+
+insert into employee values 
+(101,"adam",103),
+(102,"bob",104),
+(103,"casey",NULL),
+(104,"donald",103);
+
+select * from employee;
+
+select a.name as manager_name, b.name 
+from employee as a
+join employee as b
+where a.id = b.manager_id
+
+select name from employee
 
