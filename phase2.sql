@@ -45,3 +45,35 @@ SELECT * FROM student where city = "Delhi";
 SELECT *
 FROM student 
 WHERE marks > 80 AND city ="Delhi";
+
+
+SELECT *
+FROM student 
+WHERE marks>75;
+
+SELECT *
+FROM student 
+ORDER BY marks DESC 
+LIMIT 3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LIMIT 3;
