@@ -82,3 +82,29 @@ ORDER BY avg(marks) ASC ;
 SELECT grade,count(name)
 FROM student
 group by grade;
+
+
+SELECT city, count(rollno)
+FROM student
+GROUP BY city
+HAVING max(marks)>90;
+
+SELECT city,name 
+FROM student
+WHERE grade = "A" 
+GROUP BY city,name
+HAVING max(marks) > 90 
+ORDER BY city DESC ;
+
+SET SQL_SAFE_UPDATES = 0 ;
+
+UPDATE student 
+SET grade = "O"
+WHERE grade = "A" ;
+
+select * from student;
+
+DELETE FROM student
+WHERE marks<33;
+
+
