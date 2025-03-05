@@ -99,7 +99,59 @@ select * from employee;
 select a.name as manager_name, b.name 
 from employee as a
 join employee as b
-where a.id = b.manager_id
+where a.id = b.manager_id ;
 
+-- --union
 select name from employee
+union
+select name from employee ;
+
+-- --union all
+select name from employee
+union all
+select name from employee ;
+
+
+CREATE TABLE Student2 (
+    rollno INT PRIMARY KEY,
+    name VARCHAR(50),
+    marks INT NOT NULL,
+    grade VARCHAR(1),
+    city VARCHAR(20)
+);
+
+INSERT INTO Student2
+(rollno, name, marks, grade, city)
+VALUES
+(101, "anil", 78, "C", "Pune"),
+(102, "bhumika", 93, "A", "Mumbai"),
+(103, "chetan", 85, "B", "Mumbai"),
+(104, "dhruv", 96, "A", "Delhi"),
+(105, "emanuel", 12, "F", "Delhi"),
+(106, "farah", 82, "B", "Delhi");
+
+select * from Student2;
+
+select name,marks 
+from Student2
+where marks > (select avg(marks) from Student2) ;
+
+
+select name,rollno
+from Student2
+where rollno in (
+	select rollno
+	from Student2
+	where rollno % 2 = 0
+);
+
+select * from Student2 
+where city = "Delhi";
+
+select max(marks) from (select * from Student2 
+where city = "Delhi") as temp;
+
+
+
+
 
