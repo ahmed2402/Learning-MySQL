@@ -152,6 +152,16 @@ select max(marks) from (select * from Student2
 where city = "Delhi") as temp;
 
 
+-- mysql views
+
+create view view1 as
+select rollno,name,marks  from Student2;
+
+select * from view1
+where marks > 90;
+
+drop view view1;
+
 
 
 
